@@ -2,16 +2,12 @@ import React from 'react';
 import './Footer.css'; // Import the external CSS file
 
 const Footer = () => {
-    const scrollToTop = () => {
-        const scrollStep = -window.scrollY / (500 / 15); // Adjusts the speed of scrolling
-        const scrollInterval = setInterval(() => {
-          if (window.scrollY !== 0) {
-            window.scrollBy(0, scrollStep);
-          } else {
-            clearInterval(scrollInterval);
-          }
-        }, 15); 
-      };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', 
+    });
+  };
   return (
     <footer className="footer">
       <div className="footer-top">
