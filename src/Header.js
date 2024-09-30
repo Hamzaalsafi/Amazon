@@ -9,7 +9,7 @@ const Header = () => {
         <button className="menu-button">
           <span className="menu-icon">&#9776;</span> {/* This represents the hamburger menu */}
         </button>
-        <Link to="/" className="navbar-logo"> {/* Replace <a> with <Link> */}
+        <Link to="/Amazon" className="navbar-logo"> {/* Replace <a> with <Link> */}
           <img src="https://pngimg.com/d/amazon_PNG11.png" alt="Amazon" />
         </Link>
       </div>
