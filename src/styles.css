@@ -1,0 +1,242 @@
+/* Navbar styles */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #131921;
+    color: white;
+    z-index: ;
+  }
+  
+  /* Left section (Logo and Menu Button) */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .navbar-logo img {
+    width: 100px;
+    margin-left: 10px;
+    margin-top:10px;
+  }
+  
+  /* Center section (Search) */
+  .navbar-center {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .search-input {
+    width: 100%;
+    height: 30px;
+    max-width: 1200px;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+  }
+  
+  .search-button {
+    background-color: #febd69;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  /* Right section (Sign in and Cart) */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-link, .cart-link {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
+
+  .cart-count {
+    background-color: #f08804;
+    color: black;
+    padding: 2px 5px;
+    border-radius: 50%;
+    margin-left: 5px;
+    position: relative;
+    top: -34px;
+    left: -30px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+   
+  
+    .menu-button {
+      margin-right: 20px;
+    }
+    #locationlogo,.signintext,.delivertop,.navbar-center{
+        display: none;
+    }
+    
+  }
+  
+
+  #searchicon{
+    width: 25px;
+  }
+  #carticon{
+    width: 34px;
+    margin-top:15px;
+  }
+
+  #locationlogo{
+    width: 20px;
+    margin-top:12px;
+    
+  }
+  .Deliverto{
+    display: flex;
+    margin-left:15px ;
+    margin-right: 10px;
+  }
+  .delivertop >p:first-child{
+    color: rgba(255, 255, 255, 0.74);
+ margin-bottom: -2px;
+}
+ .signintext>p:first-child{
+    font-size: .8rem;
+    color: rgba(255, 255, 255, 0.856);
+ }
+ .signintext
+ {
+    margin-left:15px;
+ }
+ .photocontiner {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+
+ }
+.Homecontent{
+   max-width: 90%;
+  padding-left:20px;
+  padding-right:20px;
+  margin:0 auto;
+  margin-top: -250px;
+  z-index: 100;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+ align-items: center;
+
+}
+@media (max-width:500px) {
+  .Homecontent{
+    max-width: 100%;
+    flex-direction:column;
+    margin-top: -60px;
+  }
+
+}
+@media (700px <width<1200px) {
+  .Homecontent{
+    max-width: 100%;
+    margin-top: -120px;
+  }
+
+}
+@media (500px <width<=700px) {
+  .Homecontent{
+    max-width: 100%;
+    margin-top: -100px;
+  }
+
+}
+#Homeimges {
+   
+    max-width: 1600px;
+    max-height: 800px;
+    object-fit: cover;
+    z-index: -1;
+    padding: 20px;
+   position: relative;
+   background-position: center;
+    background-size: cover;
+  
+   transition: transform 0.1s ease-in-out;
+}
+@media (max-width:1100px) {
+ 
+  #Homeimges{
+    max-width: 100%;
+    padding-top:0;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+#Homeimges.slide-left {
+    animation: slideLeft 0.1s forwards;
+}
+
+#Homeimges.slide-right {
+    animation: slideRight 0.1s forwards;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.photocontiner #button1 {
+background-color: #13192100;
+    border: none;
+    cursor: pointer;
+    position: relative;
+   font-size: 2rem;
+color: #929292;
+right: -55px;
+z-index: 1000;
+}
+.photocontiner #button2 {
+    background-color: #13192100;
+        border: none;
+        cursor: pointer;
+        position: relative;
+       font-size: 2rem;
+       color: #929292;
+       left: -55px;
+       z-index: 1000;
+    }
+    @media (min-width: 768px) {
+        .navbar-center {
+          display: flex; 
+        }
+      
+        .menu-button {
+          display: none; 
+        }
+        .photocontiner #button1,.photocontiner #button2{
+            font-size: 2.8rem;
+        } 
+      }
+
+
+
+
+
+ 

@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .containerCardproductsoneimg {
+    max-width:350px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+  
+  }
+  @media (max-width:500px) {
+    .container {
+        min-width: 90%;
+
+      }
+  
+  }
+
+  .h2Cardproductsoneimg {
+    font-size: 1.2rem;
+    color: #111;
+  
+    margin-bottom: 20px;
+  }
+  
+.imgCardproductsoneimg {
+    max-width: 100%;
+    object-fit: cover;
+
+  }
+  
+  .see-allCardproductsoneimg {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #007185;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .see-allCardproductsoneimg {
+    text-decoration: none;
+  }
+  
+  
