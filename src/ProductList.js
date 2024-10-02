@@ -114,9 +114,10 @@ const ProductList = () => {
         </div>
       </div>
       <div className='productholder'>
-        {filteredProducts.map((item) => (
+        {filteredProducts.map((item,index) => (
           <Product  
             key={item.id}
+            productId={item.Products.description} 
             img={item.Products.img}
             price={item.Products.price}
             star={item.Products.star}

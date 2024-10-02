@@ -18,6 +18,9 @@ body {
   justify-content: space-between;
 
 }
+.description{
+  margin-bottom: 20px;
+}
 
 .priceProduct{
   font-size: 1.5rem;

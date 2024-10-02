@@ -16,9 +16,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/Amazon" element={<Home />} /> 
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/Amazon/cart" element={<Cart />} />
     
-               <Route path="/ProductList" element={<ProductList />} /> 
+               <Route path="/Amazon/ProductList" element={<ProductList />} /> 
             
         </Routes>
         

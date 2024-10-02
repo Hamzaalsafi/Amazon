@@ -1,5 +1,25 @@
-import React from 'react'
-function Product({img,price,star,rating,description}) {
+import React, { useState, useEffect } from 'react';
+import { db } from './firebase';
+import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
+function Product({productId,img,price,star,rating,description}) {
+  const addToCart = async () => {
+    const cartDocRef = doc(db, 'cart', productId);
+   
+      const docSnap = await getDoc(cartDocRef);
+      if (docSnap.exists()) {
+        await updateDoc(cartDocRef, {
+          quantity: docSnap.data().quantity + 1,
+        });
+      } else {
+        await setDoc(cartDocRef, {
+          about: description,
+          quantity: 1,
+          img: img,
+          price: price,
+        });
+      }
+   
+  };
   const stars=()=>{
     let starArr=[]
     for(let i=0;i<star;i++){
@@ -29,7 +49,7 @@ function Product({img,price,star,rating,description}) {
        <p className="rating">{rating}</p>
        </div>
        <div className='add-to-cart'>
-       <button className='button-32' role="button">Add to cart</button>
+       <button className='button-32' role="button" onClick={addToCart}>Add to cart</button>
        </div>
       </div>
     </div>
