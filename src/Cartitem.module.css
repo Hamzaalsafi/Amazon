@@ -51,11 +51,11 @@ font-size: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
-    background: red;
+    background: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-    background: #e62222;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #000000;
   }
   
   .noselect, .noselect span {
@@ -68,12 +68,12 @@ font-size: 1rem;
     transform: translateX(20px); 
     color: white;
     font-weight: bold;
-    font-size: 12px; 
+    font-size:0.74rem; 
   }
   
   .noselect .icon {
     position: absolute;
-    border-left: 1px solid #c41b1b;
+    border-left: 1px solid #000000;
     transform: translateX(60px); 
     height: 25px; 
     width: 20px; 
@@ -88,7 +88,7 @@ font-size: 1rem;
   }
   
   .noselect:hover {
-    background: #ff3636;
+    background: #d41a1a;
   }
   
   .noselect:hover .text {
@@ -141,7 +141,7 @@ font-size: 1rem;
     outline: none;
   }
   .quantity button:hover {
-    background-color: #2980b9;
+    background-color: #494949;
   }
   
 

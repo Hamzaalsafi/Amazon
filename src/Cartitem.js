@@ -5,25 +5,43 @@ import { doc, getDoc, updateDoc,deleteDoc  } from 'firebase/firestore';
 function Cartitem({img,price,quantity,about}) {
   const [quantityvalue, setquantityvalue] = useState(Math.floor(quantity));
   const [subtotal, setsubtotal] = useState(parseFloat(price.replace('$', '').trim())*quantityvalue);
-  const plusclick=async ()=>{
-    setquantityvalue(quantityvalue + 1);
-    const cartDocRef = doc(db, 'cart', about);
-    const docSnap = await getDoc(cartDocRef);
-    updateDoc(cartDocRef, {
-      quantity: docSnap.data().quantity + 1,
-    });
-  }
-  const minusclick=async()=>{
-    if(quantityvalue>1){
-      setquantityvalue(quantityvalue - 1);
-      const cartDocRef = doc(db, 'cart', about);
-      const docSnap = await getDoc(cartDocRef);
-      updateDoc(cartDocRef, {
-        quantity: docSnap.data().quantity - 1,
-      });
+  
+  const plusclick = async () => {
+
+    setquantityvalue((prevQuantity) => prevQuantity + 1);
+  
     
+    setsubtotal((prevSubtotal) => prevSubtotal + parseFloat(price.replace('$', '').trim()));
+  
+
+    try {
+      const cartDocRef = doc(db, 'cart', about);
+      await updateDoc(cartDocRef, {
+        quantity: quantityvalue + 1, 
+      });
+    } catch (error) {
+      console.error("Error updating quantity: ", error);
     }
-  }
+  };
+  
+  const minusclick = async () => {
+    if (quantityvalue > 1) {
+     
+      setquantityvalue((prevQuantity) => prevQuantity - 1);
+  
+      
+      setsubtotal((prevSubtotal) => prevSubtotal - parseFloat(price.replace('$', '').trim()));
+ 
+      try {
+        const cartDocRef = doc(db, 'cart', about);
+        await updateDoc(cartDocRef, {
+          quantity: quantityvalue - 1, 
+        });
+      } catch (error) {
+        console.error("Error updating quantity: ", error);
+      }
+    }
+  };
   useEffect(() => {
    
     setsubtotal(parseFloat(price.replace('$', '').trim()) * quantityvalue);
