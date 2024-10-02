@@ -68,7 +68,7 @@ function Cartitem({img,price,quantity,about}) {
   <button className="plus" aria-label="Increase" onClick={plusclick}>+</button>
     </div>
     <div className={styles.price}>
-        <p>{subtotal.toFixed(2)}</p>
+        <p>${subtotal.toFixed(2)}</p>
       
     </div>
     </div>

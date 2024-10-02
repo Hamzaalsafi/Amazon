@@ -80,9 +80,9 @@ useEffect(() => {
        <button className={styles.codebutton} >APPLY</button>
        </div>
        <hr className={styles.hrcarttotal}></hr>
-       <p className={styles.subtotal}>SUBTOTAL <span>{totalprine.toFixed(4)}</span></p>
+       <p className={styles.subtotal}>SUBTOTAL <span>${totalprine.toFixed(4)}</span></p>
        <p className={styles.tax}>TAX <span>$0</span></p>
-       <p className={styles.totalprice}>ORDER TOTAL<span>{totalprine.toFixed(4)}</span></p>
+       <p className={styles.totalprice}>ORDER TOTAL<span>${totalprine.toFixed(4)}</span></p>
        <hr className={styles.hrcarttotal}></hr>
        <div className={styles.buybutton}>
        <button className={styles.codebutton} >Chekout</button>
