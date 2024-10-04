@@ -21,7 +21,7 @@ const ProductList = () => {
         Products: doc.data()
       }));
       setProductdb(products);
-      setFilteredProducts(products); // Initially show all products
+      setFilteredProducts(products);
     }, (error) => {
       console.error("Error fetching products: ", error);
     });
@@ -117,7 +117,10 @@ const ProductList = () => {
         {filteredProducts.map((item,index) => (
           <Product  
             key={item.id}
-            productId={item.Products.description} 
+            productId={item.Products.description}
+            name={item.Products.name}
+           about={item.Products.about}
+           imges={item.Products.imges}
             img={item.Products.img}
             price={item.Products.price}
             star={item.Products.star}

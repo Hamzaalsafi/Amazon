@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { db } from './firebase';
+import { Link } from 'react-router-dom';
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
-function Product({productId,img,price,star,rating,description}) {
+function Product({productId,img,price,star,rating,description,name,about,imges}) {
+
   const addToCart = async () => {
     const cartDocRef = doc(db, 'cart', productId);
    
@@ -20,6 +22,7 @@ function Product({productId,img,price,star,rating,description}) {
       }
    
   };
+  
   const stars=()=>{
     let starArr=[]
     for(let i=0;i<star;i++){
@@ -30,13 +33,24 @@ function Product({productId,img,price,star,rating,description}) {
     }
     return starArr;
   }
+  const product = {
+    productId,
+    img,
+    price,
+    star,
+    rating,
+    description,
+    name,
+    about,
+    imges
+};
   return (
     <div>
      <div className="containerProduct">
       <div className="cardProductg">
-     
-    
+      <Link to={`/product/${name}`} state={product}>
         <img className='imgProduct' src={img} />
+        </Link>
         <div class="product-info">
         <p className='h2Product'>{description}</p>
         <div className='stars'>

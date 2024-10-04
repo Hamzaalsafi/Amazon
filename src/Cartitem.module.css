@@ -73,7 +73,7 @@ font-size: 1rem;
   
   .noselect .icon {
     position: absolute;
-    border-left: 1px solid #000000;
+    border-left: 1px solid #f12e2e;
     transform: translateX(60px); 
     height: 25px; 
     width: 20px; 

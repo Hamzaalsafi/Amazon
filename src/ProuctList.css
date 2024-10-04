@@ -47,6 +47,7 @@ body {
   object-fit: contain;
   object-position: center;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .see-allProduct {
@@ -91,8 +92,7 @@ body {
   cursor: pointer;
 
 }
-
-
+ 
 
 
 .button-32 {

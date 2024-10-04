@@ -4,6 +4,7 @@
     margin: 0 auto;
     width: 100%;
     overflow-x: hidden;
+    align-items: start;
 }
 .cartitem{
     flex:70;
@@ -19,7 +20,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
 }
 .hr{
     width: 100%;
@@ -33,14 +33,14 @@
     .containercart
   {
       flex-direction: column;
-     
+      align-items: center;
       
   }
   .cartitem{
-   
+    padding: 6px;
     margin: 6px;
     background-color: rgb(255, 255, 255);
-    padding: 0;
+    
     margin-bottom:20px;
 }
 .carttotal{
