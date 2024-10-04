@@ -78,10 +78,10 @@ const sellerRating = extractRating(str);
         <img className={styles.mainimg}src={imgshow} alt="Product Image" />
         </div>
         <div className={styles.imgesbutton}>
-        <img src={product.imges[0]} alt="Product Image" onClick={changeimg1} onMouseEnter={changeimg1}/>
-        <img src={product.imges[1]} alt="Product Image" onClick={changeimg2} onMouseEnter={changeimg2}/>
-        <img src={product.imges[2]} alt="Product Image" onClick={changeimg3} onMouseEnter={changeimg3}/>
-        <img src={product.imges[3]} alt="Product Image" onClick={changeimg4} onMouseEnter={changeimg4}/>
+        <img src={product.imges[0]} alt="Product Image" onClick={changeimg1} />
+        <img src={product.imges[1]} alt="Product Image" onClick={changeimg2} />
+        <img src={product.imges[2]} alt="Product Image" onClick={changeimg3} />
+        <img src={product.imges[3]} alt="Product Image" onClick={changeimg4} />
         </div>
         <div className={styles.buycontainer}>
       
