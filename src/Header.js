@@ -86,7 +86,7 @@ const Header = ({ user }) => {
                 {showAccountDropdown && (
                     <div className="dropdown-menu">
                        {!user&& (<div className='menubutton'>
-                          <Link to={"/Amazon"}>
+                          <Link to={"/Amazon/signin"}>
                           <button className="button-32">Sign in</button>
                           </Link>
                           <p className="newcustomer">New Cutomer? <Link to={"/Amazon/CreateAccount"}>Start here</Link> </p>
@@ -135,7 +135,7 @@ const Header = ({ user }) => {
             <div className={`mobile-menu ${showMenu ? 'show' : ''}`}>
                 <button className="close-menu-button" onClick={toggleMenu}>×</button> {/* Close button */}
                 {!user&& (<div className='menubutton'>
-                          <Link to={"/Amazon"}>
+                          <Link to={"/Amazon/signin"}>
                           <button className="button-32">Sign in</button>
                           </Link>
                           <p className="newcustomer">New Cutomer? <Link to={"/Amazon/CreateAccount"}>Start here</Link> </p>

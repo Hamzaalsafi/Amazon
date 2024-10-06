@@ -89,7 +89,7 @@ function CreatAccound() {
       <span>
       Already have an account? </span>
     </div>
-    <Link to="/Amazon">
+    <Link to="/Amazon/signin">
     <button className={styles.button} type="button">Sign in</button>
     </Link>
     <hr className={styles.hr2} />
