@@ -32,7 +32,7 @@ function App() {
     console.log("Current User:", user); 
   }, [user]);
 
-  const noHeaderFooter = ["/Amazon", "/Amazon/CreateAccount"];
+  const noHeaderFooter = ["/Amazon/signin", "/Amazon/CreateAccount"];
   
   return (
     <div className="App">
