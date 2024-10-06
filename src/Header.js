@@ -44,7 +44,7 @@ const Header = ({ user }) => {
   };
     return (
       <nav>
-         <Link to="/Amazon/home" className="navbar-logo2"> 
+         <Link to="/Amazon" className="navbar-logo2"> 
                     <img src="https://pngimg.com/d/amazon_PNG11.png" alt="Amazon" />
                 </Link>
         <div className="navbar">
