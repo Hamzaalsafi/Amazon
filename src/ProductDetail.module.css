@@ -20,13 +20,13 @@ body {
     height:auto;
    display: flex;
     flex-direction: column;
-margin-right:80px;
+
 
  
 }
 .imges{
     margin-bottom: 15px;
-    height:200px;
+  
 
  
 }
@@ -266,9 +266,7 @@ margin-right:80px;
         align-items: center;
         margin-top: 20px;
     }
-    .imges{
-        height:375px;
-    }
+   
     .imges img{
         margin: 0;
         margin-bottom: 15px;
@@ -298,11 +296,6 @@ margin-right:80px;
     list-style-type: disc; 
     margin-left: 20px; 
     padding-left: 0; 
-}
-@media (380px>width) {
-    .imges{
-        height:330px;
-    }
 }
 
 

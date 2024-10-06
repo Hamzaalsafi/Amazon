@@ -125,7 +125,8 @@ function Home() {
                 
                 <div className='Homecontent'>
                     {Cardproduct.slice(0,6).map((item) => (
-                        <Cardproducts  
+                        <Cardproducts 
+                        key={(item.id)} 
                         title={item.homeEssentials.title}
                         p1={item.homeEssentials.p1}
                         p2={item.homeEssentials.p2}
@@ -139,12 +140,14 @@ function Home() {
                     ))}
                        {Cardoneproduct.slice(0,2).map((item) => (
                         <Cardproductsoneimg  
+                        key={(item.id)} 
                         title={item.Cardproductsoneimg.title}
                         img={item.Cardproductsoneimg.img}
                         />
                     ))}
                     {cardscroling.slice(0,2).map((item) => (
                         <Cardscrolling  
+                        key={(item.id)} 
                         title={item.cardscroling.title}
                         img1={item.cardscroling.img1}
                         img2={item.cardscroling.img2}
@@ -169,6 +172,7 @@ function Home() {
                     ))}
                       {Cardproduct.slice(6,10).map((item) => (
                         <Cardproducts  
+                        key={(item.id)} 
                         title={item.homeEssentials.title}
                         p1={item.homeEssentials.p1}
                         p2={item.homeEssentials.p2}
@@ -182,6 +186,7 @@ function Home() {
                     ))}
                      {cardscroling.slice(2,4).map((item) => (
                         <Cardscrolling  
+                        key={(item.id)} 
                         title={item.cardscroling.title}
                         img1={item.cardscroling.img1}
                         img2={item.cardscroling.img2}
@@ -206,6 +211,7 @@ function Home() {
                     ))}
                       {Cardproduct.slice(10,14).map((item) => (
                         <Cardproducts  
+                        key={(item.id)} 
                         title={item.homeEssentials.title}
                         p1={item.homeEssentials.p1}
                         p2={item.homeEssentials.p2}
@@ -218,7 +224,8 @@ function Home() {
                         />
                     ))}
                      {cardscroling.slice(4,5).map((item) => (
-                        <Cardscrolling  
+                        <Cardscrolling
+                        key={(item.id)}   
                         title={item.cardscroling.title}
                         img1={item.cardscroling.img1}
                         img2={item.cardscroling.img2}

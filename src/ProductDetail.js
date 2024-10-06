@@ -4,36 +4,83 @@ import React, { useState,useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from './firebase';
+import 'react-notifications/lib/notifications.css';
+import { auth } from './firebase'; 
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import './custom-notifications.css';
 function ProductDetail() {
 
     const location = useLocation();
     const product = location.state; 
     const { img, price, star, rating, description, name, about, imges, productId } = product;
-    const addToCart = async () => {
-        const cartDocRef = doc(db, 'cart', product.productId);
+    const addToCart = async ()=>{
+  
+      const user = auth.currentUser;
+   
+      if (typeof productId !== 'string') {
+        console.error('Invalid productId. It must be a string.');
+        return;
+      }
+    
+      if (user) {
        
+        try {
+          const cartDocRef = doc(db, `users/${user.uid}/cart`, productId);
+    
+          // Check if the product already exists in the user's cart
           const docSnap = await getDoc(cartDocRef);
           if (docSnap.exists()) {
+            NotificationManager.success(
+              'Item has been added to your cart successfully!', // message body
+              'Success', // title of the notification
+              4000, // duration in milliseconds
+              null, // callback
+              null // priority
+            );
             await updateDoc(cartDocRef, {
               quantity: docSnap.data().quantity + 1,
             });
           } else {
+            NotificationManager.success(
+              'Item has been added to your cart successfully!', // message body
+              'Success',
+              3000, 
+              null, 
+              null, 
+               
+            );
             await setDoc(cartDocRef, {
-              about: product.description,
+              about: description,
               quantity: 1,
-              img: product.img,
-              price:product.price,
+              img: img,
+              price: price,
+              productId:productId
             });
           }
-       
-      };
+        
+        } catch (error) {
+          console.error('Error adding to cart: ', error);
+        }
+      } else {
+        
+        NotificationManager.error(
+          'You must be logged in to add items to the cart.',
+          'Error',
+          3000,
+          null,
+          null,
+          'notification-error-custom'
+        );
+        
+      }
+    };
     const stars=()=>{
         let starArr=[]
         for(let i=0;i<star;i++){
-          starArr.push(<i class="fa fa-star checked"style={{ fontSize: '1.3rem',margin:"0.06rem"}}></i>)
+          starArr.push(<i className="fa fa-star checked"style={{ fontSize: '1.3rem',margin:"0.06rem"}}></i>)
         }
         for(let i=star;i<5;i++){
-            starArr.push(<i class="fa fa-star" style={{fontSize: '1.3rem',margin:"0.06rem", color: '#d9d7d7' }}></i>)
+            starArr.push(<i className="fa fa-star" style={{fontSize: '1.3rem',margin:"0.06rem", color: '#d9d7d7' }}></i>)
           }
         return starArr;
       }
@@ -132,6 +179,7 @@ const sellerRating = extractRating(str);
         
     </div>
     </div>
+    <NotificationContainer />
     </div>
   )
 }

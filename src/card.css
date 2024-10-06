@@ -4,8 +4,8 @@ body {
   }
   
   .container {
-    max-width:350px;
-z-index: 1000;
+    max-width:340px;
+z-index: 1;
     margin: 10px;
     background-color: rgb(255, 255, 255);
     padding: 10px;

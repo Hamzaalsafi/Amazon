@@ -1,4 +1,6 @@
+// Import only what you need from the modular SDK
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 // Your Firebase configuration
@@ -14,5 +16,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app); // Initialize Firestore
-export {db}
+
+// Initialize services
+export const auth = getAuth(app);  
+const db = getFirestore(app);     
+
+export { db };

@@ -12,6 +12,8 @@
     "postcss": "^8.4.47",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-firebase-hooks": "^5.1.1",
+    "react-notifications": "^1.7.4",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4",
     "webpack": "^5.95.0"
@@ -47,5 +49,5 @@
     "react-router-dom": "^6.26.2",
     "tailwindcss": "^3.4.13"
   },
-  "homepage": "https://Hamzaalsafi.github.io/Amazon"
+  "homepage": "https://Hamzaalsafi.github.io/Amazon/home"
 }

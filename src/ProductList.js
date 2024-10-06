@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { db } from './firebase';
+import { useLocation } from 'react-router-dom';
 import { collection, onSnapshot } from 'firebase/firestore'; 
 import Product from "./Product";
 import './ProuctList.css';
 
 const ProductList = () => {
+  const location = useLocation();
+  const searchValue = location.state?.searchValue || '';
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -26,6 +29,7 @@ const ProductList = () => {
       console.error("Error fetching products: ", error);
     });
   };
+ 
 
   useEffect(() => {
     getProductdb(); 
@@ -50,24 +54,36 @@ const ProductList = () => {
     setSelectedRating(rating);
     filterProducts(minPrice, maxPrice, selectedCategory, rating);
   };
-
-  const filterProducts = (min, max, category, rating) => {
-    const minNum = parseFloat(min) || 0; 
-    const maxNum = parseFloat(max) || Infinity; 
+  useEffect(() => {
+    filterProducts();
+}, [minPrice, maxPrice, selectedCategory, selectedRating, searchValue]);
+  const filterProducts = () => {
+    const minNum = parseFloat(minPrice) || 0; 
+    const maxNum = parseFloat(maxPrice) || Infinity; 
 
     const filtered = Productdb.filter(product => {
-      const priceString = product.Products.price.replace('$', '').trim();
-      const price = parseFloat(priceString);
+        const priceString = product.Products.price.replace('$', '').trim();
+        const price = parseFloat(priceString);
 
-      const isWithinPriceRange = price >= minNum && price <= maxNum;
-      const matchesCategory = category ? product.Products.category === category : true;
-      const matchesRating = rating !== null ? product.Products.star === rating : true;
+        const isWithinPriceRange = price >= minNum && price <= maxNum;
+        const matchesCategory = selectedCategory ? product.Products.category === selectedCategory : true;
+        
+        const productName = product.Products.name?.toLowerCase() || '';
+        const productCategory = product.Products.category?.toLowerCase() || '';
+        const productDescription = product.Products.description?.toLowerCase() || ''; 
+        
+        const matchesSearchValue = searchValue 
+            ? productName.includes(searchValue.toLowerCase()) || 
+              productCategory.includes(searchValue.toLowerCase()) 
+            : true;
+        const matchesRating = selectedRating !== null ? product.Products.star === selectedRating : true;
 
-      return isWithinPriceRange && matchesCategory && matchesRating;
+        return isWithinPriceRange && matchesCategory && matchesRating && matchesSearchValue;
     });
 
     setFilteredProducts(filtered);
-  };
+};
+
 
   return (
     <div className='ProductListMean'>
@@ -117,7 +133,7 @@ const ProductList = () => {
         {filteredProducts.map((item,index) => (
           <Product  
             key={item.id}
-            productId={item.Products.description}
+            productId={item.id}
             name={item.Products.name}
            about={item.Products.about}
            imges={item.Products.imges}
