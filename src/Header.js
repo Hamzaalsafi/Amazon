@@ -54,7 +54,7 @@ const Header = ({ user }) => {
                     <span className="menu-icon">&#9776;</span> 
                 </button>
                 
-                <Link to="/Amazon/home" className="navbar-logo"> 
+                <Link to="/Amazon" className="navbar-logo"> 
                     <img src="https://pngimg.com/d/amazon_PNG11.png" alt="Amazon" />
                 </Link>
                
