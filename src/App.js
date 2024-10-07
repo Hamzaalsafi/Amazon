@@ -38,7 +38,7 @@ function App() {
     <div className="App">
       {!noHeaderFooter.includes(location.pathname) && <Header user={user} />}
       <Routes>
-        <Route path="/Amazon" element={<Home />} /> 
+        <Route path="/" element={<Home />} /> 
         <Route path="/Amazon/cart" element={<Cart />} />
         <Route path="/Amazon/ProductList" element={<ProductList />} /> 
         <Route path="/Amazon/product/:name" element={<ProductDetail />} />

@@ -31,7 +31,7 @@ function Home() {
           
             setCardproduct(products);
         }, (error) => {
-            console.error("Error fetching products: ", error); // Log any errors
+            console.error("Error fetching products: ", error); 
         });
     }
     const getcardscroling = () => {
