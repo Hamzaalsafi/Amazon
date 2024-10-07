@@ -53,7 +53,7 @@ function CreatAccound() {
           console.log('Logged in:', loginCredential.user);
       
           // Redirect the user to the home page
-          navigate('/Amazon/home');
+          navigate('/Amazon');
       
         } catch (error) {
           setError('Error creating account: ' + error.message);

@@ -3,7 +3,8 @@ import styles from './Signin.module.css';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase'; 
 import { useNavigate,Link } from 'react-router-dom';
-
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 function Signin({ setUser }) { // Accept setUser as a prop
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -24,9 +25,9 @@ function Signin({ setUser }) { // Accept setUser as a prop
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log('Logged in:', userCredential.user);
-            setUser(userCredential.user); // Update user state in App.js
+            setUser(userCredential.user); 
             setSuccess('Logged in successfully!');
-            navigate('/Amazon/home'); // Redirect to home page
+            navigate('/Amazon'); 
         } catch (error) {
             console.error('Login error:', error);
             setError('Error logging in: ' + error.message);
@@ -68,6 +69,7 @@ function Signin({ setUser }) { // Accept setUser as a prop
                 </div>
                 <p>© 1996-2024, Amazon.com, Inc. or its affiliates</p>
             </div>
+            <NotificationContainer />
         </div>
     );
 }
