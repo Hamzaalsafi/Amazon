@@ -32,18 +32,18 @@ function App() {
     console.log("Current User:", user); 
   }, [user]);
 
-  const noHeaderFooter = ["/Amazon/signin", "/Amazon/CreateAccount"];
+  const noHeaderFooter = ["/signin", "/CreateAccount"];
   
   return (
     <div className="App">
       {!noHeaderFooter.includes(location.pathname) && <Header user={user} />}
       <Routes>
         <Route path="/" element={<Home />} /> 
-        <Route path="/Amazon/cart" element={<Cart />} />
-        <Route path="/Amazon/ProductList" element={<ProductList />} /> 
-        <Route path="/Amazon/product/:name" element={<ProductDetail />} />
-        <Route path="/Amazon/signin" element={<Signin setUser={setUser} />} />
-        <Route path="/Amazon/CreateAccount" element={<CreatAccound />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/ProductList" element={<ProductList />} /> 
+        <Route path="/product/:name" element={<ProductDetail />} />
+        <Route path="/signin" element={<Signin setUser={setUser} />} />
+        <Route path="/CreateAccount" element={<CreatAccound />} />
       </Routes>
       {!noHeaderFooter.includes(location.pathname) && <Footer />}
     </div>

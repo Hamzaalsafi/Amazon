@@ -16,7 +16,6 @@ function Cardscrolling2(props) {
       const elapsedTime = currentTime - startTime;
       const progress = Math.min(elapsedTime / duration, 1); 
 
-      // Apply easing function (easeInOut)
       const easing = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
       imgContainerRef.current.scrollLeft = start + distance * easing(progress);
@@ -42,10 +41,10 @@ function Cardscrolling2(props) {
   };
 
   return (
-    <div className='contianer'> {/* Preserved spelling */}
+    <div className='contianer'> 
       <h2>{props.title}</h2>
       <button id="button1Cardscrolling" onClick={scrollLeft}>❮</button>
-      <div className="imgcontianer" ref={imgContainerRef}> {/* Preserved spelling */}
+      <div className="imgcontianer" ref={imgContainerRef}> 
         {Array.from({ length: 19 }, (_, index) => (
           <img key={index} src={props[`img${index + 1}`]} alt={`img-${index + 1}`} />
         ))}

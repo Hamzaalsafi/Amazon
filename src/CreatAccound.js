@@ -26,7 +26,7 @@ function CreatAccound() {
         const auth = getAuth();
       
         try {
-          // Create a new account
+    
           const userCredential = await createUserWithEmailAndPassword(auth, email, password);
           const user = userCredential.user;
       
@@ -52,7 +52,7 @@ function CreatAccound() {
           console.log('Logged in:', loginCredential.user);
       
          
-          navigate('/Amazon');
+          navigate('/');
       
         } catch (error) {
           setError('Error creating account: ' + error.message);
@@ -88,7 +88,7 @@ function CreatAccound() {
       <span>
       Already have an account? </span>
     </div>
-    <Link to="/Amazon/signin">
+    <Link to="/signin">
     <button className={styles.button} type="button">Sign in</button>
     </Link>
     <hr className={styles.hr2} />

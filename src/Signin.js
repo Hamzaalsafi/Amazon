@@ -27,7 +27,7 @@ function Signin({ setUser }) { // Accept setUser as a prop
             console.log('Logged in:', userCredential.user);
             setUser(userCredential.user); 
             setSuccess('Logged in successfully!');
-            navigate('/Amazon'); 
+            navigate('/'); 
         } catch (error) {
             console.error('Login error:', error);
             setError('Error logging in: ' + error.message);
@@ -57,7 +57,7 @@ function Signin({ setUser }) { // Accept setUser as a prop
             <div className={styles.divider}>
                 <span>New to Amazon?</span>
             </div>
-              <Link to="/Amazon/CreateAccount">
+              <Link to="/CreateAccount">
             <button className={styles.button} type="button">Create your Amazon account</button>
             </Link>
             <hr className={styles.hr2} />
