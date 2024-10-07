@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css'; // Import the external CSS file
 
-const Footer = () => {
+function Footer ()  {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

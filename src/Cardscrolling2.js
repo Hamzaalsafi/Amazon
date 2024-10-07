@@ -8,7 +8,7 @@ function Cardscrolling2(props) {
     const start = imgContainerRef.current.scrollLeft; 
     const end = start + scrollAmount; 
     const distance = end - start;
-    const duration = 500; 
+    const duration = 400; 
     let startTime = null;
 
     const animation = (currentTime) => {

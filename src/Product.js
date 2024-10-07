@@ -103,12 +103,20 @@ const addToWishList = async () => {
     setIsActive(newActiveState); 
 
     try {
+     
       const docSnap = await getDoc(wishlistDocRef);
 
       if (docSnap.exists() && docSnap.data().isActive) {
+        
         await deleteDoc(wishlistDocRef);
         console.log('Item removed from the wish list');
       } else {
+        NotificationManager.success(
+          'Item has been added to your wishlist successfully!', 
+          'Success', 
+          4000, 
+          null,
+          null );
         await setDoc(wishlistDocRef, {
           productId: productId,
           isActive: true,
@@ -157,8 +165,11 @@ useEffect(() => {
 }, [productId]);
 
   return (
+    
     <div>
+     
      <div className="containerProduct">
+      
       <div className="cardProductg">
       <Link to={`/product/${name}`} state={product}>
         <img className='imgProduct' src={img} />

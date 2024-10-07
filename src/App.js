@@ -10,7 +10,7 @@ import { HashRouter  as Router, Route, Routes, useLocation } from 'react-router-
 import Footer from './Footer';
 import React, { useEffect, useState } from 'react';
 import ProductList from './ProductList';
-
+import WishList from './WishList';
 function App() {
   const [user, setUser] = useState(null); 
   const location = useLocation();
@@ -43,6 +43,7 @@ function App() {
         <Route path="/ProductList" element={<ProductList />} /> 
         <Route path="/product/:name" element={<ProductDetail />} />
         <Route path="/signin" element={<Signin setUser={setUser} />} />
+        <Route path="/wishlist" element={<WishList/>} />
         <Route path="/CreateAccount" element={<CreatAccound />} />
       </Routes>
       {!noHeaderFooter.includes(location.pathname) && <Footer />}

@@ -4,7 +4,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import { auth } from './firebase'; 
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate,Link } from 'react-router-dom';
-const Header = ({ user }) => {
+function Header  ({ user })  {
     const [itemCount, setItemCount] = useState(0);
     const [showAccountDropdown, setShowAccountDropdown] = useState(false);
     const [showMenu, setShowMenu] = useState(false); 
@@ -100,8 +100,9 @@ const Header = ({ user }) => {
                         <div className="menulist">
                         <div className="YourLists">
                         <h3>Your Lists</h3>
-                        <p>Crate a List</p>
-                        <p>Find a List or Registry</p>
+                        <Link to={"/wishlist"}>
+                        <p>Wish List</p>
+                        </Link>
                         </div>
                         <div className='vl'></div>
                         <div className="YourAccount">

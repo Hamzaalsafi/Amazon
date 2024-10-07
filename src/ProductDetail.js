@@ -120,6 +120,7 @@ const ratingCount = extractNumber(str);
 const sellerRating = extractRating(str);
   return (
     <div className={styles.container}>
+      
       <div className={styles.imgContainer}>
         <div className={styles.imges}>
         <img className={styles.mainimg}src={imgshow} alt="Product Image" />

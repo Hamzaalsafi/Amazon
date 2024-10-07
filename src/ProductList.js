@@ -5,7 +5,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import Product from "./Product";
 import './ProuctList.css';
 
-const ProductList = () => {
+function ProductList () {
   const location = useLocation();
   const searchValue = location.state?.searchValue || '';
   const [minPrice, setMinPrice] = useState('');
@@ -87,6 +87,7 @@ const ProductList = () => {
 
   return (
     <div className='ProductListMean'>
+      
       <div className="product-list-nav">
         <div className="Category">
           <h2>Category</h2>
@@ -130,6 +131,7 @@ const ProductList = () => {
         </div>
       </div>
       <div className='productholder'>
+      
         {filteredProducts.map((item,index) => (
           <Product  
             key={item.id}
