@@ -27,22 +27,22 @@ function ProductDetail() {
         try {
           const cartDocRef = doc(db, `users/${user.uid}/cart`, productId);
     
-          // Check if the product already exists in the user's cart
+        
           const docSnap = await getDoc(cartDocRef);
           if (docSnap.exists()) {
             NotificationManager.success(
-              'Item has been added to your cart successfully!', // message body
-              'Success', // title of the notification
-              4000, // duration in milliseconds
-              null, // callback
-              null // priority
+              'Item has been added to your cart successfully!', 
+              'Success',
+              4000, 
+              null, 
+              null 
             );
             await updateDoc(cartDocRef, {
               quantity: docSnap.data().quantity + 1,
             });
           } else {
             NotificationManager.success(
-              'Item has been added to your cart successfully!', // message body
+              'Item has been added to your cart successfully!', 
               'Success',
               3000, 
               null, 

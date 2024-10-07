@@ -30,16 +30,15 @@ function CreatAccound() {
           const userCredential = await createUserWithEmailAndPassword(auth, email, password);
           const user = userCredential.user;
       
-          // Update the user's displayName
+          
           await updateProfile(user, { displayName: name });
       
-          // Reload the user to ensure displayName is updated
           await auth.currentUser.reload();
       
-          // Check if the displayName is set correctly
+          
           console.log('Updated displayName:', auth.currentUser.displayName);
       
-          // Store user data in Firestore
+        
           await setDoc(doc(db, 'users', user.uid), {
             name: name,
             email: email,
@@ -48,11 +47,11 @@ function CreatAccound() {
       
           setSuccess('Account created successfully!');
       
-          // Sign in automatically after account creation
+          
           const loginCredential = await signInWithEmailAndPassword(auth, email, password);
           console.log('Logged in:', loginCredential.user);
       
-          // Redirect the user to the home page
+         
           navigate('/Amazon');
       
         } catch (error) {

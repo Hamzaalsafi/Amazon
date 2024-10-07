@@ -6,7 +6,7 @@ import ProductDetail from './ProductDetail';
 import Signin from './Signin';
 import { auth } from './firebase'; 
 import CreatAccound from './CreatAccound';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter  as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Footer from './Footer';
 import React, { useEffect, useState } from 'react';
 import ProductList from './ProductList';
@@ -41,7 +41,7 @@ function App() {
         <Route path="/Amazon" element={<Home />} /> 
         <Route path="/Amazon/cart" element={<Cart />} />
         <Route path="/Amazon/ProductList" element={<ProductList />} /> 
-        <Route path="/product/:name" element={<ProductDetail />} />
+        <Route path="/Amazon/product/:name" element={<ProductDetail />} />
         <Route path="/Amazon/signin" element={<Signin setUser={setUser} />} />
         <Route path="/Amazon/CreateAccount" element={<CreatAccound />} />
       </Routes>

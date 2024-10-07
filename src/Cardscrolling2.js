@@ -14,7 +14,7 @@ function Cardscrolling2(props) {
     const animation = (currentTime) => {
       if (!startTime) startTime = currentTime;
       const elapsedTime = currentTime - startTime;
-      const progress = Math.min(elapsedTime / duration, 1); // Ensure progress doesn't exceed 1
+      const progress = Math.min(elapsedTime / duration, 1); 
 
       // Apply easing function (easeInOut)
       const easing = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;

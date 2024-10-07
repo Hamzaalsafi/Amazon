@@ -25,7 +25,6 @@ function Cart() {
 
             setCartItems(cartItemsTemp);
 
-            // Calculate total price
             const total = cartItemsTemp.reduce(
               (acc, curr) =>
                 acc +
@@ -39,15 +38,15 @@ function Cart() {
           }
         );
 
-        return () => unsubscribeSnapshot(); // Cleanup for the snapshot listener
+        return () => unsubscribeSnapshot(); 
       } else {
-        // If the user is not logged in, clear the cart
+       
         setCartItems([]);
         setTotalPrice(0);
       }
     });
 
-    return () => unsubscribeAuth(); // Cleanup for the auth state listener
+    return () => unsubscribeAuth(); 
   }, []);
 
 
