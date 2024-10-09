@@ -150,8 +150,9 @@ function Header  ({ user })  {
                         <div className="menulis2">
                         <div className="YourLists2">
                         <h3>Your Lists</h3>
-                        <p>Crate a List</p>
-                        <p>Find a List or Registry</p>
+                        <Link to={"/wishlist"}>
+                        <p>Wish List</p>
+                        </Link>
                         </div>
                         <hr className='hr2'/>
                         <div className="YourAccount2">
