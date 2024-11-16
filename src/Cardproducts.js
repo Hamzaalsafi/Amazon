@@ -10,26 +10,26 @@ function Cardproducts({ title, p1, p2, p3, p4, img1, img2, img3, img4 }) {
         <div className="category-grid">
           <div className="category-item">
           <Link to='/ProductList'>
-            <img src={img1} alt={p1} />
+            <img loading='lazy' src={img1} alt={p1} />
             </Link>
             <p>{p1}</p>
           </div>
           
           <div className="category-item">
           <Link to='/ProductList'>
-            <img src={img2} alt={p2} />
+            <img loading='lazy' src={img2} alt={p2} />
             </Link>
             <p>{p2}</p>
           </div>
           <div className="category-item">
           <Link to='/ProductList'>
-            <img src={img3} alt={p3} />
+            <img loading='lazy' src={img3} alt={p3} />
             </Link>
             <p>{p3}</p>
           </div>
           <div className="category-item">
           <Link to='/ProductList'>
-            <img src={img4} alt={p4} />
+            <img loading='lazy' src={img4} alt={p4} />
             </Link>
             <p>{p4}</p>
           </div>

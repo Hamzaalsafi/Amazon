@@ -46,7 +46,7 @@ function Cardscrolling2(props) {
       <button id="button1Cardscrolling" onClick={scrollLeft}>❮</button>
       <div className="imgcontianer" ref={imgContainerRef}> 
         {Array.from({ length: 19 }, (_, index) => (
-          <img key={index} src={props[`img${index + 1}`]} alt={`img-${index + 1}`} />
+          <img loading='lazy' key={index} src={props[`img${index + 1}`]} alt={`img-${index + 1}`} />
         ))}
       </div>
       <button id="button2Cardscrolling" onClick={scrollRight}>❯</button>

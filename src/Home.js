@@ -115,6 +115,7 @@ function Home() {
                 <div className='photocontiner'>
                     <button id="button1" onClick={() => handleClick("left")}>❮</button>
                     <img
+                    loading='lazy'
                         id="Homeimges"
                         src={images[index]}
                         alt="Slideshow"

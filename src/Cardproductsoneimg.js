@@ -7,7 +7,7 @@ function Cardproductsoneimg({ title, img }) {
       <div className="card2Cardproductsoneimg">
       <h2 className='h2Cardproductsoneimg'>{title}</h2>
     <Link to='/ProuctList'>
-        <img className='imgCardproductsoneimg' src={img} alt={title} />
+        <img loading='lazy' className='imgCardproductsoneimg' src={img} alt={title} />
         </Link>
         <Link to='/ProductList'>
         <p className="see-allCardproductsoneimg">See all deals</p>
